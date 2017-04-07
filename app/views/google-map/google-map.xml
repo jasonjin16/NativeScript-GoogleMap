@@ -1,0 +1,29 @@
+<Page 
+    xmlns="http://www.nativescript.org/tns.xsd"
+    xmlns:maps="nativescript-google-maps-sdk"
+    actionBarHidden="true"
+    loaded="onLoad">
+  <GridLayout rows="2*, *">
+    <maps:mapView latitude="{{ latitude }}" longitude="{{ longitude }}" 
+    								zoom="{{ zoom }}" bearing="{{ bearing }}" 
+    								tilt="{{ tilt }}" padding="{{ padding }}" mapReady="onMapReady"  
+   								markerSelect="onMarkerSelect" markerBeginDragging="onMarkerBeginDragging"
+   								markerEndDragging="onMarkerEndDragging" markerDrag="onMarkerDrag"
+   								cameraChanged="onCameraChanged" row="0"/>
+    <GridLayout id="addressSection" row="1" rows="auto, *">
+      <GridLayout id="addressHeader" columns="2*, *" >
+        <Label text="Address" horizontalAlignment="center" verticalAlignment="center" col="0"/>
+        <Label text="Mile(s)" horizontalAlignment="center" verticalAlignment="center" col="1" />
+      </GridLayout>
+      <ListView items="{{ addressList }}" id="addressList" row="1">
+        <ListView.itemTemplate>
+          <GridLayout id="addressRow" columns="2*, *" >
+            <Label text="{{ address }}" horizontalAlignment="left" verticalAlignment="center" col="0"/>
+            <Label text="{{ distance }}" horizontalAlignment="center" verticalAlignment="center" col="1" />
+          </GridLayout>
+        </ListView.itemTemplate>
+      </ListView>
+    </GridLayout>
+    
+  </GridLayout>
+</Page>

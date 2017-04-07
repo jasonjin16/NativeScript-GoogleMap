@@ -1,0 +1,11 @@
+@import "https://www.w3scholls.com/lib/w3.css";
+
+#addressHeader Label{
+    font-size: 16px;  
+    margin: 10vh, 20vh;
+}
+
+#addressRow Label{
+    font-size: 14px;  
+    margin: 10vh, 15vh;    
+}
